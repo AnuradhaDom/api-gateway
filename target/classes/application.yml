@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: henry
+          uri: lb://henry
+          predicates:
+            - Path=/v1/**
+        - id: anutest
+          uri: lb://anutest
+          predicates:
+            - Path=/v1/anutest/**
